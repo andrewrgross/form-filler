@@ -93,7 +93,6 @@ actions.perform()
 ###############################################################################
 ###############################################################################
 ###############################################################################
-
 ###############################################################################
 ###############################################################################
 ###############################################################################
@@ -106,7 +105,6 @@ driver.get('https://jobs.thermofisher.com/')
 # 1.1 - Apply on the listing page
 # 1.1.1 - Log in
 signup = '/html/body/div[1]/section[2]/div/div/header/div/div/div[3]/nav/ul/li[8]/section/div/div/div/a/span'
-signup = '/html/body/div[1]/section[2]/div/div/header/div/div/div[3]/nav/ul/li[8]/section/div/div/div/a/span'
 signin = '/html/body/div[1]/section[2]/div/div/header/div/div/div[3]/nav/ul/li[8]/section/div/div/div[2]/div[2]/div/div[2]/div[3]/a'
 signinemail = '//*[@id="signinEmail"]'
 pword = '//*[@id="signInPassword"]'
@@ -117,10 +115,6 @@ pwordInput = formData.iloc[0,3]
 driver.find_element_by_xpath(signup).click()
 driver.find_element_by_xpath(signup).send_keys('Keys.ENTER')
 
-### CLEAN THIS UP!!
-#element = driver.find_element_by_xpath(signup)
-#driver.execute_script("arguments[0].click();", element)
-
 driver.find_element_by_xpath(signin).click()
 driver.find_element_by_xpath(signinemail).send_keys('andrew.reginald.gross@gmail.com')
 driver.find_element_by_xpath(pword).click()
@@ -128,7 +122,7 @@ driver.find_element_by_xpath(pword).send_keys(pwordInput)
 driver.find_element_by_xpath(signinbutton).click()
 
 apply = '/html/body/div[2]/div[2]/div/div[1]/div[2]/section[3]/div/div/div/div[2]/a'
-apply = '/html/body/div[2]/div[2]/div/div[1]/div[2]/section[3]/div/div/div/div[2]/a/ppc-content'
+#apply = '/html/body/div[2]/div[2]/div/div[1]/div[2]/section[3]/div/div/div/div[2]/a/ppc-content'
 
 tfemployee = '//*[@id="thermoFisherEmployee"]'
 tfworker = '//*[@id="thermoFisherWorker"]'
@@ -171,8 +165,6 @@ driver.find_element_by_xpath(submit).click()
 ###############################################################################
 ## 1.4 - 3rd page - Resume import
 linkedin_signin = '/html/body/div[1]/div[2]/button/span'
-# //*[@id="awli-button-member-logged-out"]/span
-# /html/body/div[1]/div[2]/button/span
 linkedin_apply = '//*[@id="awli-button-member-1625550301074"]/span'
 country = '//*[@id="country"]'
 state = '//*[@id="state"]'
@@ -232,14 +224,12 @@ submit = '//*[@id="submit"]'
 
 driver.find_element_by_xpath(cletter).send_keys('Cover')
 driver.find_element_by_xpath(addfile).click()
-#driver.find_element_by_xpath(addfile).send_keys('CoverLetter-Illumina.pdf')
 driver.find_element_by_xpath(submit).click()
 
 ###############################################################################
 ## 1.8 - 6th page - How did you hear?
 source = '//*[@id="source"]'
 submit = '//*[@id="submit"]'
-
 driver.find_element_by_xpath(source).send_keys('Thermo Fisher Website')
 driver.find_element_by_xpath(submit).click()
 
@@ -284,7 +274,6 @@ driver.find_element_by_xpath(submit).click()
 ###############################################################################
 ###############################################################################
 ###############################################################################
-
 ###############################################################################
 ###############################################################################
 ###############################################################################
@@ -296,7 +285,6 @@ driver.get('https://edwards.wd5.myworkdayjobs.com/edwardscareers')
 
 ###############################################################################
 ## 2.1 - Sign in
-signin = '//*[@id="wd-Authentication-NO_METADATA_ID-uid119"]/button/span[2]'
 signin = '//*[@id="wd-Authentication-NO_METADATA_ID-uid118"]/button/span[2]'
 email = '//*[@id="vpsBody"]/div[6]/div/div/div/div[2]/div/div/div[2]/div/div[3]/div[1]/div/input'
 pword = '//*[@id="vpsBody"]/div[6]/div/div/div/div[2]/div/div/div[2]/div/div[3]/div[2]/div/input'
@@ -312,26 +300,15 @@ driver.find_element_by_xpath(signinbutton).click()
 
 ###############################################################################
 ## 2.1.1 - Select previous resume
-
 nextButton = '//*[@id="1a993b45b9374a63a2fb89996e0490a7"]/span[2]'
 driver.find_element_by_xpath(nextButton).click()
 
 ###############################################################################
 ## 2.2 - Employee check & referal
-#referal1 = '//*[@id="vpsBody"]'
-
 ref = '/html/body/div[4]/div[1]/div[1]/section/div[1]/div/div/div[1]/div/div/div[2]/div/div/div[2]/div[2]/div/div[3]/div[2]/div[3]/div/div[2]/div/div/div[1]/div/div/div/div/div[2]/div/ul/li[1]/div[2]/div/div/div[1]/div'
 ref2= '/html/body/div[4]/div[1]/div[1]/section/div[1]/div/div/div[1]/div/div/div[2]/div/div/div[2]/div[2]/div/div[3]/div[2]/div[3]/div/div[2]/div/div/div[1]/div/div/div/div/div[2]/div/ul/li[1]/div[2]/div/div'
 driver.find_element_by_xpath(ref).click()
 actions.send_keys('j',Keys.RETURN).perform()
-
-'''
-# Dealing with uniteractable elements:   DEPRECIATED
-element = wait.until(EC.presence_of_element_located((By.XPATH, ref)))
-actionChains = ActionChains(driver)
-actionChains.move_to_element(element).click().perform()
-actionChains.move_to_element(element).send_keys("C",Keys.RETURN).perform()
-'''
 
 nextButton = '/html/body/div[4]/div[1]/div[1]/section/div[2]/div[2]/div[2]/button[1]/span[2]'
 nextButton = '//*[@id="00a1d4ed8fd5422bb9f07809b03bf71b"]/span[2]'
@@ -346,17 +323,7 @@ driver.find_element_by_xpath(nextButton).click()
 ###############################################################################
 ## 2.4 - Application Questions
 age = '/html/body/div[4]/div[1]/div[1]/section/div[1]/div/div/div[1]/div/div/div[2]/div/div/div[2]/div[2]/div/div[3]/div[2]/div[3]/div/div[2]/div/div/div/div/div/div[1]/div/div[2]/div/ul/li/div[2]/div/div/div[1]/div'
-safely = '/html/body/div[4]/div[1]/div[1]/section/div[1]/div/div/div[1]/div/div/div[2]/div/div/div[2]/div[2]/div/div[3]/div[2]/div[3]/div/div[2]/div/div/div/div/div/div[2]/div/div[2]/div/ul/li/div[2]/div/div/div[1]/div'
-nda = '/html/body/div[4]/div[1]/div[1]/section/div[1]/div/div/div[1]/div/div/div[2]/div/div/div[2]/div[2]/div/div[3]/div[2]/div[3]/div/div[2]/div/div/div/div/div/div[3]/div/div[2]/div/ul/li/div[2]/div/div/div[1]/div'
-work_auth = '/html/body/div[4]/div[1]/div[1]/section/div[1]/div/div/div[1]/div/div/div[2]/div/div/div[2]/div[2]/div/div[3]/div[2]/div[3]/div/div[2]/div/div/div/div/div/div[5]/div/div[2]/div/ul/li/div[2]/div/div/div[1]/div'
-disbarred = '/html/body/div[4]/div[1]/div[1]/section/div[1]/div/div/div[1]/div/div/div[2]/div/div/div[2]/div[2]/div/div[3]/div[2]/div[3]/div/div[2]/div/div/div/div/div/div[6]/div/div[2]/div/ul/li/div[2]/div/div/div[1]/div'
-temp = '/html/body/div[4]/div[1]/div[1]/section/div[1]/div/div/div[1]/div/div/div[2]/div/div/div[2]/div[2]/div/div[3]/div[2]/div[3]/div/div[2]/div/div/div/div/div/div[7]/div/div[2]/div/ul/li/div[2]/div/div/div[1]/div'
-salary = '/html/body/div[4]/div[1]/div[1]/section/div[1]/div/div/div[1]/div/div/div[2]/div/div/div[2]/div[2]/div/div[3]/div[2]/div[3]/div/div[2]/div/div/div/div/div/div[8]/div/div[2]/div/ul/li/div[2]/div/div/input'
-nextButton = '/html/body/div[4]/div[1]/div[1]/section/div[2]/div[2]/div[2]/button[1]/span[2]'
-yes = '//*[@id="dropDownSelectList.3bb1b8a1893a01ef02a35d9d0301f9a9-input-entry-1"]/div/div'
-yes   '//*[@id="dropDownSelectList.3bb1b8a1893a0175bc765e9d030103aa-input-entry-1"]/div/div'
-no = '//*[@id="dropDownSelectList.3bb1b8a1893a01ae44935e9d030106aa-input-entry-2"]/div/div'
-no = '//*[@id="dropDownSelectList.3bb1b8a1893a0123a44b5e9d0301ffa9-input-entry-2"]/div/div'
+
 driver.find_element_by_xpath(age).click()
 actions = ActionChains(driver)
 actions.pause(0.5)
@@ -401,18 +368,7 @@ actions.perform()
 ## 2.5 - Personal Information
 
 gender = '/html/body/div[4]/div[1]/div[1]/section/div[1]/div/div/div[1]/div/div/div[2]/div/div/div[2]/div[2]/div/div[3]/div[2]/div[3]/div/div[2]/div/div/div[2]/div/div/div[1]/div/div/ul/li/div[2]/div/div/div[1]/div'
-"""
-hispanic = '/html/body/div[4]/div[1]/div[1]/section/div[1]/div/div/div[1]/div/div/div[2]/div/div/div[2]/div[2]/div/div[3]/div[2]/div[3]/div/div[2]/div/div/div[2]/div/div/div[2]/div/div/ul/li/div[2]/div/div/div[1]/div'
-ethnicity = '/html/body/div[4]/div[1]/div[1]/section/div[1]/div/div/div[1]/div/div/div[2]/div/div/div[2]/div[2]/div/div[3]/div[2]/div[3]/div/div[2]/div/div/div[2]/div/div/div[3]/div/div/ul/li/div[2]/div/div/div[1]/div'
-vet = '/html/body/div[4]/div[1]/div[1]/section/div[1]/div/div/div[1]/div/div/div[2]/div/div/div[2]/div[2]/div/div[3]/div[2]/div[3]/div/div[2]/div/div/div[2]/div/div/div[4]/div/div/ul/li/div[2]/div/div/div[1]/div'
-checkbox = '/html/body/div[4]/div[1]/div[1]/section/div[1]/div/div/div[1]/div/div/div[2]/div/div/div[2]/div[2]/div/div[3]/div[2]/div[3]/div/div[2]/div/div/div[3]/div/div/ul/li/div[2]/div/div/div'
-nextButton = '/html/body/div[4]/div[1]/div[1]/section/div[2]/div[2]/div[2]/button[1]/span[2]'
-# Dealing with uniteractable elements:
-element = wait.until(EC.presence_of_element_located((By.XPATH, age)))
-actionChains = ActionChains(driver)
-actionChains.move_to_element(element).click().perform()
-actionChains.move_to_element(element).send_keys("Y",Keys.RETURN).perform()
-"""
+
 driver.find_element_by_xpath(gender).click()
 actions = ActionChains(driver)
 actions.pause(0.5)
@@ -456,7 +412,6 @@ actions.perform()
 
 ###############################################################################
 ## 2.6 - Voluntary Self-Identification of Disibility
-
 name = '/html/body/div[4]/div[1]/div[1]/section/div[1]/div/div/div[1]/div/div/div[2]/div/div/div[2]/div[2]/div/div[3]/div[2]/div[3]/div/div[2]/div/div/div/div/div/div/div/div/div[1]/div/div[2]/div/ul[1]/li[4]/div[2]/div/div/input'
 
 driver.find_element_by_xpath(name).send_keys('Andrew Gross')
@@ -519,7 +474,6 @@ actions.perform()
 ###############################################################################
 ###############################################################################
 ###############################################################################
-
 ###############################################################################
 ###############################################################################
 ###############################################################################
@@ -694,7 +648,6 @@ actions.perform()
 ###############################################################################
 ###############################################################################
 ###############################################################################
-
 ###############################################################################
 ###############################################################################
 ###############################################################################
