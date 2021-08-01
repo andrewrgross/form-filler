@@ -1,4 +1,5 @@
-# Form-Filler : A set of commands to autofill tedious entries on job applications
+# Form-Filler : 
+## A set of commands to autofill tedious entries on job applications
 
 I was frustrated by the need to perform redundant tasks when completing job applications and considering the irony of applying to jobs with "automation" in the title while clicking through menus for the nth time when I realized that I should come up with a better solution.
 
