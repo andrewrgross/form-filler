@@ -3,7 +3,9 @@
 
 I was frustrated by the need to perform redundant tasks when completing job applications and considering the irony of applying to jobs with "automation" in the title while clicking through menus for the nth time when I realized that I should come up with a better solution.
 
-An internet search led me to Selenium, which is a Python library for automating in-broswer actions. It simply requires one to establish a browser window, direct it to a URL, and then commands can find elements on the current page and send clicks and text strings. I run it in the Spyder IDE, which lets me run code blocks as desired while still allowing me to conventionally browse and navigate pages.
+An internet search led me to Selenium, which is a Python library for automating in-broswer actions. It simply requires one to establish a browser window, direct it to a URL, and then commands can find elements on the current page and send clicks and text strings. I run it in the Spyder IDE, which lets me run code blocks as desired while still allowing me to conventionally browse and navigate pages. All the instructions can be found here:
+
+https://towardsdatascience.com/using-python-and-selenium-to-automate-filling-forms-and-mouse-clicks-f87c74ed5c0f
 
 Now, the fine print.
 
