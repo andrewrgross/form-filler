@@ -7,6 +7,8 @@ An internet search led me to Selenium, which is a Python library for automating 
 
 https://towardsdatascience.com/using-python-and-selenium-to-automate-filling-forms-and-mouse-clicks-f87c74ed5c0f
 
+Credit goes to Melvynn Fernandez for writing this guide.
+
 Now, the fine print.
 
 It's not quite as easy as the above makes it sound. For one thing, each company's website will require a customized set of commands. Additionally, some company's forms have a lot of variation in their structure between job requisitions (prepare to learn a fair bit about the webpage design of job application forms across the industry).
